@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  database:
+    image: postgres:12
+    environment:
+      - POSTGRES_PASSWORD=trn7-AZ8w-Ck2p
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=apikit_db
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
+    ports:
+      - 5434:5432
+
+  # app:
+  #   build: .
+  #   image: apikit
+  #   expose:
+  #     - 2000
+  #   environment:
+  #     - DATABASE_URL=mysql://apikit_user:apikit_password@database:3306/apikit_db?connectionLimit=10
+  #     - PORT=2000
+  #     - LOG_FILE=./logs/errors.log
+  #     - REDIS_URL=redis://redis:6379
+  #     - REDIS_PREFIX='app_'
+
+  #   ports:
+  #     - 4080:2000
